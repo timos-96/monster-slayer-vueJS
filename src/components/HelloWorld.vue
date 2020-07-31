@@ -89,9 +89,11 @@ export default {
     },
     isGameFinished: function (){
       if (this.playerHealth <= 0){
+        this.playerHealth = 0;
         alert("You lose :(")
       }
       else if (this.monsterHealth <= 0){
+        this.monsterHealth = 0;
         alert("You win :D")
       }
     }
