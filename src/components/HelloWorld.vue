@@ -33,9 +33,9 @@
           </div>
       </section>
       <section class="row log" v-if="isAttackHappened">
-          <div v-for="log in logs" :key="log" class="small-12 columns">
+          <div v-for="(log,index) in logs" :key="log" class="small-12 columns">
               <ul>
-                  <li>
+                  <li v-bind:style="index%2 == 1 ? 'background-color:red; color:white' : 'background-color:green; color:white'">
                     {{log}}
                   </li>
               </ul>
