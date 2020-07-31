@@ -74,7 +74,7 @@ export default {
       this.monsterHealth = this.monsterHealth - monsterDamage
       this.logs.push("Player inflicted " + monsterDamage + " damage")
       this.logs.push("Monster inflicted " + playerDamage + " damage")
-      isGameFinshed();
+      this.isGameFinished();
     },
     heal: function(){
       var playerHeal = Math.round(Math.random() * 20)
@@ -82,23 +82,22 @@ export default {
       this.playerHealth = this.playerHealth + playerHeal - playerDamage
       this.logs.push("Player healed " + playerHeal + " damage")
       this.logs.push("Monster inflicted " + playerDamage + " damage")
-      isGameFinshed()
+      this.isGameFinished()
     },
     giveUp: function(){
       this.initGame();
+    },
+    isGameFinished: function (){
+      if (this.playerHealth <= 0){
+        alert("You lose :(")
+      }
+      else if (this.monsterHealth <= 0){
+        alert("You win :D")
+      }
     }
   },
   props: {
     msg: String
-  }
-}
-
-function isGameFinshed(){
-  if (this.playerHealth <= 0){
-    alert("You lose :(")
-  }
-  else if (this.monsterHealth <= 0){
-    alert("You win :D")
   }
 }
 </script>
