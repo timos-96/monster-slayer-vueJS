@@ -27,7 +27,7 @@
       <section class="row controls" v-if="isGameStarted">
           <div class="small-12 columns">
               <button v-on:click="setEventHappened(), attack()" id="attack">ATTACK</button>
-              <button v-on:click="setEventHappened()" id="special-attack">SPECIAL ATTACK</button>
+              <button v-on:click="setEventHappened(), specialAttack()" id="special-attack">SPECIAL ATTACK</button>
               <button v-on:click="setEventHappened(), heal()" id="heal">HEAL</button>
               <button v-on:click="setEventHappened(), giveUp()" id="give-up">GIVE UP</button>
           </div>
@@ -70,6 +70,15 @@ export default {
     attack: function(){
       var playerDamage = Math.round(Math.random() * 15)
       var monsterDamage = Math.round(Math.random() * 12)
+      this.playerHealth = this.playerHealth - playerDamage
+      this.monsterHealth = this.monsterHealth - monsterDamage
+      this.logs.push("Player inflicted " + monsterDamage + " damage")
+      this.logs.push("Monster inflicted " + playerDamage + " damage")
+      this.isGameFinished();
+    },
+    specialAttack: function(){
+      var playerDamage = Math.round(Math.random() * 20)
+      var monsterDamage = Math.round(Math.random() * 25)
       this.playerHealth = this.playerHealth - playerDamage
       this.monsterHealth = this.monsterHealth - monsterDamage
       this.logs.push("Player inflicted " + monsterDamage + " damage")
