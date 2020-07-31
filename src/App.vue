@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
+    <img  class="monster-slayer-image" alt="Vue logo" src="https://i.redd.it/rl8dbhnqbcn01.jpg">
     <HelloWorld msg="Welcome to Your Vue.js App"/>
   </div>
 </template>
@@ -24,5 +24,8 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+.monster-slayer-image {
+  width: 20%
 }
 </style>
