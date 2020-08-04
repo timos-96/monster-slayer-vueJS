@@ -1,6 +1,11 @@
 <template>
  <!DOCTYPE html>
   <div id="app">
+      <section class="row controls" v-if="!isGameStarted">
+          <div class="small-12 columns">
+              <button v-on:click="setGameToStarted(), initGame()" id="start-game">START NEW GAME</button>
+          </div>
+      </section>
       <section class="row" v-if="isGameStarted">
           <div class="small-6 columns">
               <h1 class="text-center">YOU</h1>
@@ -17,11 +22,6 @@
                     {{monsterHealth}}
                   </div>
               </div>
-          </div>
-      </section>
-      <section class="row controls" v-if="!isGameStarted">
-          <div class="small-12 columns">
-              <button v-on:click="setGameToStarted(), initGame()" id="start-game">START NEW GAME</button>
           </div>
       </section>
       <section class="row controls" v-if="isGameStarted">
