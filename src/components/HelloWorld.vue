@@ -29,10 +29,10 @@
             </section>
             <section class="row controls">
                 <div class="small-12 columns">
-                    <button v-on:click="setEventHappened(); attack()" id="attack">ATTACK</button>
-                    <button v-on:click="setEventHappened(); specialAttack()" id="special-attack">SPECIAL ATTACK</button>
-                    <button v-on:click="setEventHappened(); heal()" id="heal">HEAL</button>
-                    <button v-on:click="setEventHappened(); giveUp()" id="give-up">GIVE UP</button>
+                    <button v-on:click="attack()" id="attack">ATTACK</button>
+                    <button v-on:click="specialAttack()" id="special-attack">SPECIAL ATTACK</button>
+                    <button v-on:click="heal()" id="heal">HEAL</button>
+                    <button v-on:click="giveUp()" id="give-up">GIVE UP</button>
                 </div>
             </section>
             <section class="row log" v-if="isAttackHappened">
@@ -70,6 +70,7 @@
                 this.isGameStarted = true
             },
             attack: function () {
+                this.setEventHappened();
                 const playerDamage = Math.round(Math.random() * 15);
                 const monsterDamage = Math.round(Math.random() * 12);
                 this.playerHealth = this.playerHealth - playerDamage
@@ -79,6 +80,7 @@
                 this.isGameFinished();
             },
             specialAttack: function () {
+                this.setEventHappened();
                 var playerDamage = Math.round(Math.random() * 20)
                 var monsterDamage = Math.round(Math.random() * 25)
                 this.playerHealth = this.playerHealth - playerDamage
