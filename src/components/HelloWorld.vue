@@ -79,21 +79,18 @@
                 this.applyDamage(20, 25);
                 this.isGameFinished();
             },
-            applyDamage: function(playerDamageModifier, monsterDamageModifier) {
+            heal: function () {
+                this.applyDamage(-20, 15);
+                this.isGameFinished()
+            },
+            applyDamage: function (playerDamageModifier, monsterDamageModifier) {
                 const playerDamage = Math.round(Math.random() * playerDamageModifier);
                 const monsterDamage = Math.round(Math.random() * monsterDamageModifier);
                 this.playerHealth = this.playerHealth - playerDamage
                 this.monsterHealth = this.monsterHealth - monsterDamage
-                this.logs.push("Player inflicted " + monsterDamage + " damage")
+                const playerAction = playerDamageModifier > 0 ? "inflicted" : "healed";
+                this.logs.push("Player " + playerAction + " " + monsterDamage + " damage")
                 this.logs.push("Monster inflicted " + playerDamage + " damage")
-            },
-            heal: function () {
-                const playerHeal = Math.round(Math.random() * 20);
-                const playerDamage = Math.round(Math.random() * 15);
-                this.playerHealth = this.playerHealth + playerHeal - playerDamage
-                this.logs.push("Player healed " + playerHeal + " damage")
-                this.logs.push("Monster inflicted " + playerDamage + " damage")
-                this.isGameFinished()
             },
             giveUp: function () {
                 this.initGame();
