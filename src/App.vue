@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <img  class="monster-slayer-image" alt="Vue logo" src="https://i.redd.it/rl8dbhnqbcn01.jpg">
+    <img  class="monster-slayer-image" alt="Fantasy soldier" src="https://i.redd.it/rl8dbhnqbcn01.jpg">
     <HelloWorld msg="Welcome to Your Vue.js App"/>
   </div>
 </template>
