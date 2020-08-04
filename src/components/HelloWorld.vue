@@ -71,27 +71,25 @@
             },
             attack: function () {
                 this.setAttackHappened();
-                const playerDamage = Math.round(Math.random() * 15);
-                const monsterDamage = Math.round(Math.random() * 12);
-                this.playerHealth = this.playerHealth - playerDamage
-                this.monsterHealth = this.monsterHealth - monsterDamage
-                this.logs.push("Player inflicted " + monsterDamage + " damage")
-                this.logs.push("Monster inflicted " + playerDamage + " damage")
+                this.applyDamage(15, 12);
                 this.isGameFinished();
             },
             specialAttack: function () {
                 this.setAttackHappened();
-                var playerDamage = Math.round(Math.random() * 20)
-                var monsterDamage = Math.round(Math.random() * 25)
+                this.applyDamage(20, 25);
+                this.isGameFinished();
+            },
+            applyDamage: function(playerDamageModifier, monsterDamageModifier) {
+                const playerDamage = Math.round(Math.random() * playerDamageModifier);
+                const monsterDamage = Math.round(Math.random() * monsterDamageModifier);
                 this.playerHealth = this.playerHealth - playerDamage
                 this.monsterHealth = this.monsterHealth - monsterDamage
                 this.logs.push("Player inflicted " + monsterDamage + " damage")
                 this.logs.push("Monster inflicted " + playerDamage + " damage")
-                this.isGameFinished();
             },
             heal: function () {
-                var playerHeal = Math.round(Math.random() * 20)
-                var playerDamage = Math.round(Math.random() * 15)
+                const playerHeal = Math.round(Math.random() * 20);
+                const playerDamage = Math.round(Math.random() * 15);
                 this.playerHealth = this.playerHealth + playerHeal - playerDamage
                 this.logs.push("Player healed " + playerHeal + " damage")
                 this.logs.push("Monster inflicted " + playerDamage + " damage")
