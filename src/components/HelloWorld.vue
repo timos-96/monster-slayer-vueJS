@@ -61,16 +61,13 @@
             }
         },
         methods: {
-            setGameToStarted: function () {
-                this.isGameStarted = true
-            },
             setEventHappened: function () {
                 this.isAttackHappened = true;
             },
             initGame: function () {
                 this.playerHealth = 100
                 this.monsterHealth = 100
-                this.setGameToStarted()
+                this.isGameStarted = true
             },
             attack: function () {
                 var playerDamage = Math.round(Math.random() * 15)
