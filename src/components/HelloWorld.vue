@@ -3,7 +3,7 @@
     <div id="app">
         <section class="row controls" v-if="!isGameStarted">
             <div class="small-12 columns">
-                <button v-on:click="setGameToStarted(), initGame()" id="start-game">START NEW GAME</button>
+                <button v-on:click="initGame()" id="start-game">START NEW GAME</button>
             </div>
         </section>
         <div v-if="isGameStarted">
@@ -70,6 +70,7 @@
             initGame: function () {
                 this.playerHealth = 100
                 this.monsterHealth = 100
+                this.setGameToStarted()
             },
             attack: function () {
                 var playerDamage = Math.round(Math.random() * 15)
