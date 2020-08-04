@@ -1,6 +1,6 @@
 <template>
     <!DOCTYPE html>
-    <div id="app">
+    <div id="game">
         <section class="row controls" v-if="!isGameStarted">
             <div class="small-12 columns">
                 <button v-on:click="initGame()" id="start-game">START NEW GAME</button>
@@ -50,7 +50,7 @@
 
 <script>
     export default {
-        name: 'HelloWorld',
+        name: 'Game',
         data: function () {
             return {
                 isGameStarted: false,
