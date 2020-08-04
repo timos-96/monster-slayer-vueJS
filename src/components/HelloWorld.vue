@@ -29,16 +29,16 @@
             </section>
             <section class="row controls">
                 <div class="small-12 columns">
-                    <button v-on:click="setEventHappened(), attack()" id="attack">ATTACK</button>
-                    <button v-on:click="setEventHappened(), specialAttack()" id="special-attack">SPECIAL ATTACK</button>
-                    <button v-on:click="setEventHappened(), heal()" id="heal">HEAL</button>
-                    <button v-on:click="setEventHappened(), giveUp()" id="give-up">GIVE UP</button>
+                    <button v-on:click="setEventHappened(); attack()" id="attack">ATTACK</button>
+                    <button v-on:click="setEventHappened(); specialAttack()" id="special-attack">SPECIAL ATTACK</button>
+                    <button v-on:click="setEventHappened(); heal()" id="heal">HEAL</button>
+                    <button v-on:click="setEventHappened(); giveUp()" id="give-up">GIVE UP</button>
                 </div>
             </section>
             <section class="row log" v-if="isAttackHappened">
                 <div v-for="(log,index) in logs" :key="log" class="small-12 columns">
                     <ul>
-                        <li v-bind:style="index%2 == 1 ? 'background-color:red; color:white' : 'background-color:green; color:white'">
+                        <li v-bind:style="index%2 === 1 ? 'background-color:red; color:white' : 'background-color:green; color:white'">
                             {{log}}
                         </li>
                     </ul>
@@ -70,8 +70,8 @@
                 this.isGameStarted = true
             },
             attack: function () {
-                var playerDamage = Math.round(Math.random() * 15)
-                var monsterDamage = Math.round(Math.random() * 12)
+                const playerDamage = Math.round(Math.random() * 15);
+                const monsterDamage = Math.round(Math.random() * 12);
                 this.playerHealth = this.playerHealth - playerDamage
                 this.monsterHealth = this.monsterHealth - monsterDamage
                 this.logs.push("Player inflicted " + monsterDamage + " damage")
