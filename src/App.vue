@@ -1,17 +1,17 @@
 <template>
   <div id="app">
     <img  class="monster-slayer-image" alt="Fantasy soldier" src="./assets/monsterSlayer.jpg">
-    <Game/>
+    <HelloWorld/>
   </div>
 </template>
 
 <script>
-import Game from './components/Game.vue'
+import HelloWorld from './components/HelloWorld.vue'
 
 export default {
   name: 'App',
   components: {
-    Game
+    HelloWorld
   }
 }
 </script>
