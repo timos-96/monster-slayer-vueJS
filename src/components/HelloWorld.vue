@@ -106,9 +106,6 @@ export default {
         alert("You win :D")
       }
     }
-  },
-  props: {
-    msg: String
   }
 }
 </script>

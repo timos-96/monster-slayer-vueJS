@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <img  class="monster-slayer-image" alt="Fantasy soldier" src="./assets/monsterSlayer.jpg">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <HelloWorld/>
   </div>
 </template>
 
