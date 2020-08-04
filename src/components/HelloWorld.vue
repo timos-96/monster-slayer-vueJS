@@ -61,7 +61,7 @@
             }
         },
         methods: {
-            setEventHappened: function () {
+            setAttackHappened: function () {
                 this.isAttackHappened = true;
             },
             initGame: function () {
@@ -70,7 +70,7 @@
                 this.isGameStarted = true
             },
             attack: function () {
-                this.setEventHappened();
+                this.setAttackHappened();
                 const playerDamage = Math.round(Math.random() * 15);
                 const monsterDamage = Math.round(Math.random() * 12);
                 this.playerHealth = this.playerHealth - playerDamage
@@ -80,7 +80,7 @@
                 this.isGameFinished();
             },
             specialAttack: function () {
-                this.setEventHappened();
+                this.setAttackHappened();
                 var playerDamage = Math.round(Math.random() * 20)
                 var monsterDamage = Math.round(Math.random() * 25)
                 this.playerHealth = this.playerHealth - playerDamage
